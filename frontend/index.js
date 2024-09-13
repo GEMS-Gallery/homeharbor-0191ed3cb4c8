@@ -1,7 +1,28 @@
 import { backend } from 'declarations/backend';
 
-// Fetch and display properties
-async function displayProperties() {
+// Fetch and display property tiles
+async function displayPropertyTiles() {
+    const properties = await backend.getProperties();
+    const propertyTiles = document.getElementById('property-tiles');
+    propertyTiles.innerHTML = '';
+
+    properties.slice(0, 4).forEach(property => {
+        const propertyTile = document.createElement('div');
+        propertyTile.className = 'property-tile';
+        propertyTile.innerHTML = `
+            <img src="${property.imageUrl}" alt="${property.address}">
+            <div class="details">
+                <h3>${property.address}</h3>
+                <p>Price: $${property.price.toLocaleString()}</p>
+                <p>${property.bedrooms} bed, ${property.bathrooms} bath</p>
+            </div>
+        `;
+        propertyTiles.appendChild(propertyTile);
+    });
+}
+
+// Fetch and display all properties
+async function displayAllProperties() {
     const properties = await backend.getProperties();
     const propertyList = document.getElementById('property-list');
     propertyList.innerHTML = '';
@@ -73,7 +94,8 @@ function setupContactForm() {
 
 // Initialize the page
 async function init() {
-    await displayProperties();
+    await displayPropertyTiles();
+    await displayAllProperties();
     await displayAgentInfo();
     await displayTestimonials();
     setupContactForm();
