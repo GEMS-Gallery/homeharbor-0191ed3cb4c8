@@ -30,7 +30,44 @@ actor {
   };
 
   // State
-  stable var properties : [Property] = [];
+  stable var properties : [Property] = [
+    {
+      id = 0;
+      address = "123 Main St, Anytown, USA";
+      price = 350000;
+      bedrooms = 3;
+      bathrooms = 2;
+      sqft = 1800;
+      imageUrl = "https://example.com/property1.jpg";
+    },
+    {
+      id = 1;
+      address = "456 Oak Ave, Somewhere, USA";
+      price = 450000;
+      bedrooms = 4;
+      bathrooms = 3;
+      sqft = 2200;
+      imageUrl = "https://example.com/property2.jpg";
+    },
+    {
+      id = 2;
+      address = "789 Pine Rd, Elsewhere, USA";
+      price = 275000;
+      bedrooms = 2;
+      bathrooms = 1;
+      sqft = 1200;
+      imageUrl = "https://example.com/property3.jpg";
+    },
+    {
+      id = 3;
+      address = "101 Cedar Ln, Nowhere, USA";
+      price = 550000;
+      bedrooms = 5;
+      bathrooms = 4;
+      sqft = 3000;
+      imageUrl = "https://example.com/property4.jpg";
+    }
+  ];
   stable var agentInfo : AgentInfo = {
     name = "John Doe";
     phone = "123-456-7890";
