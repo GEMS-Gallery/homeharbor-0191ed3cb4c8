@@ -1,0 +1,31 @@
+type Testimonial = 
+ record {
+   content: text;
+   id: nat;
+   name: text;
+ };
+type Property = 
+ record {
+   address: text;
+   bathrooms: nat;
+   bedrooms: nat;
+   id: nat;
+   imageUrl: text;
+   price: nat;
+   sqft: nat;
+ };
+type AgentInfo = 
+ record {
+   bio: text;
+   email: text;
+   name: text;
+   phone: text;
+ };
+service : {
+  addProperty: (text, nat, nat, nat, nat, text) -> (nat);
+  addTestimonial: (text, text) -> (nat);
+  getAgentInfo: () -> (AgentInfo) query;
+  getProperties: () -> (vec Property) query;
+  getTestimonials: () -> (vec Testimonial) query;
+  updateAgentInfo: (text, text, text, text) -> ();
+}
