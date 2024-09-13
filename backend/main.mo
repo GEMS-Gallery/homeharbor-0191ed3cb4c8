@@ -20,6 +20,7 @@ actor {
     phone: Text;
     email: Text;
     bio: Text;
+    imageUrl: Text;
   };
 
   type Testimonial = {
@@ -35,6 +36,7 @@ actor {
     phone = "123-456-7890";
     email = "john@example.com";
     bio = "Experienced real estate agent with 10+ years in the industry.";
+    imageUrl = "https://media.licdn.com/dms/image/v2/C5603AQGthJL_DcMSIA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1518390992422?e=1731542400&v=beta&t=X8tUjTEP9pJa61ZhxEj6qPhjLjnGxvaaRt6c4_H65So";
   };
   stable var testimonials : [Testimonial] = [];
 
@@ -59,12 +61,13 @@ actor {
   };
 
   // Agent Info Management
-  public func updateAgentInfo(name: Text, phone: Text, email: Text, bio: Text) : async () {
+  public func updateAgentInfo(name: Text, phone: Text, email: Text, bio: Text, imageUrl: Text) : async () {
     agentInfo := {
       name;
       phone;
       email;
       bio;
+      imageUrl;
     };
   };
 

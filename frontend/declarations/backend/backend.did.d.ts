@@ -6,6 +6,7 @@ export interface AgentInfo {
   'bio' : string,
   'name' : string,
   'email' : string,
+  'imageUrl' : string,
   'phone' : string,
 }
 export interface Property {
@@ -31,7 +32,10 @@ export interface _SERVICE {
   'getAgentInfo' : ActorMethod<[], AgentInfo>,
   'getProperties' : ActorMethod<[], Array<Property>>,
   'getTestimonials' : ActorMethod<[], Array<Testimonial>>,
-  'updateAgentInfo' : ActorMethod<[string, string, string, string], undefined>,
+  'updateAgentInfo' : ActorMethod<
+    [string, string, string, string, string],
+    undefined
+  >,
 }
 export declare const idlFactory: IDL.InterfaceFactory;
 export declare const init: (args: { IDL: typeof IDL }) => IDL.Type[];

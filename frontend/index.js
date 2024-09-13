@@ -26,10 +26,13 @@ async function displayAgentInfo() {
     const agentInfo = await backend.getAgentInfo();
     const agentInfoElement = document.getElementById('agent-info');
     agentInfoElement.innerHTML = `
-        <h3>${agentInfo.name}</h3>
-        <p>Phone: ${agentInfo.phone}</p>
-        <p>Email: ${agentInfo.email}</p>
-        <p>${agentInfo.bio}</p>
+        <img src="${agentInfo.imageUrl}" alt="${agentInfo.name}">
+        <div class="agent-details">
+            <h3>${agentInfo.name}</h3>
+            <p>Phone: ${agentInfo.phone}</p>
+            <p>Email: ${agentInfo.email}</p>
+            <p>${agentInfo.bio}</p>
+        </div>
     `;
 }
 

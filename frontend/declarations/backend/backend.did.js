@@ -3,6 +3,7 @@ export const idlFactory = ({ IDL }) => {
     'bio' : IDL.Text,
     'name' : IDL.Text,
     'email' : IDL.Text,
+    'imageUrl' : IDL.Text,
     'phone' : IDL.Text,
   });
   const Property = IDL.Record({
@@ -30,7 +31,7 @@ export const idlFactory = ({ IDL }) => {
     'getProperties' : IDL.Func([], [IDL.Vec(Property)], ['query']),
     'getTestimonials' : IDL.Func([], [IDL.Vec(Testimonial)], ['query']),
     'updateAgentInfo' : IDL.Func(
-        [IDL.Text, IDL.Text, IDL.Text, IDL.Text],
+        [IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text],
         [],
         [],
       ),

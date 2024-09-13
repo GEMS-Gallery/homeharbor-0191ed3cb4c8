@@ -18,6 +18,7 @@ type AgentInfo =
  record {
    bio: text;
    email: text;
+   imageUrl: text;
    name: text;
    phone: text;
  };
@@ -27,5 +28,5 @@ service : {
   getAgentInfo: () -> (AgentInfo) query;
   getProperties: () -> (vec Property) query;
   getTestimonials: () -> (vec Testimonial) query;
-  updateAgentInfo: (text, text, text, text) -> ();
+  updateAgentInfo: (text, text, text, text, text) -> ();
 }
